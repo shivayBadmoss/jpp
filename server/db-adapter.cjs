@@ -1,13 +1,9 @@
 const { PrismaClient } = require('@prisma/client');
-const { PrismaPg } = require('@prisma/adapter-pg');
-const { Pool } = require('pg');
 
-const connectionString = process.env.DATABASE_URL;
+// Use standard Prisma Client with environment variable handling found in schema.prisma
+// This automatically picks up DATABASE_URL from .env or system environment
+const prisma = new PrismaClient();
 
-const pool = new Pool({ connectionString });
-const adapter = new PrismaPg(pool);
-const prisma = new PrismaClient({ adapter });
-
-console.log('🔌 Connecting to PostgreSQL via Prisma (Adapter-PG)...');
+console.log('🔌 Connecting to PostgreSQL via Prisma (Standard)...');
 
 module.exports = prisma;
