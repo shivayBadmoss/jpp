@@ -11,7 +11,7 @@
     "client": "vite",
     "server": "nodemon server/index.cjs",
     "build": "npx prisma generate && vite build",
-    "start": "npx prisma db push --accept-data-loss && node server/index.cjs",
+    "start": "node server/index.cjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
