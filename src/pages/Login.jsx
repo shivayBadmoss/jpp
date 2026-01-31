@@ -19,7 +19,7 @@ export default function Login() {
 
         try {
             await login(email, password, 'user');
-            navigate('/');
+            navigate('/home');
         } catch (err) {
             console.error(err);
             if (err.includes && err.includes('Unexpected token')) {
